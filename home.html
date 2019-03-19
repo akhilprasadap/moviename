@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>home</title>
+	<link rel="stylesheet" type="text/css" href="home.css">
+</head>
+<body class="p.jpg">
+	<div id="maindiv">
+		<div class="heading" id="heading">
+			<h2 style="color: white" id="name"></h2>
+		</div>
+		<div id="listdiv">
+			<!-- <div class="moviecard" id=" moviecard"><div><h3>movieObjectListArray[0]["name"]</h3></div><div><h5>movieObjectListArray[0]["rating"]</h5></div></div> -->
+		</div>
+	</div>
+	<script type="text/javascript">
+		
+		var username = window.location.href;
+		var username = new URL(username);
+		var username = username.searchParams.get("username");
+		// alert(x);
+		
+		document.getElementById('name').innerHTML = username;
+		
+		localStorage.setItem("movieObjectList",JSON.stringify([{name: "Njan Prakashan",rating: 9.5,review :"The story of a man named Prakashan who yearns to go to foreign countries and who finds his name not very modern so changes his name to P. R. Akash just to sound cool.[5]Though qualified as a B.Sc. Nursing Graduate nurse, he vehemently opposes the idea of entering the nursing profession because of its lower pay and thankless nature and believing it is suited to  women rather than men. He actively tries to go abroad through spouse visa",image: "njan.jpg"},
+			{name: "vijay superum pournamiyum",rating: 9,review :" A laidback, jobless fellow who has no guts to chase his passion and a brave girl who doesn't give up despite her business plans failing to take off. In Jis Joy's Vijay Superum Pournamiyum, the lead pair is that combo of opposites that we have seen in many films. Regardless, the way life pans out for them is quite different from anything we have seen so far on screen, and the makers have narrated the story in a setting as contemporary as possible. How far do they all come together to make an engaging story?",image: "vija.jpg"},
+			{name: "Kumblangi Nights",rating: 7.5,review :"Shammi has the thickest moustache in town. He single-handedly beats to pulp a group of men who dare to enter his home. He is ‘decent’ by the conventional conservative standards, always has a smile on his face, even when he hears unpleasant things. He gets a scene where he admires his face and utters “the complete man”. In a different movie, Shammi, played by Fahadh Fazil, would be the "hero" (as he refers to himself), strutting around to a rousing background score.",image: "ku.jpg" },
+			{name: "joseph",rating: 9,review :"His unkempt appearance, early morning drinking habit and the shabbiness of the house in which he lives alone shows a man who is being drowned by sorrow. A phone call from a top police officer takes him to a crime scene, a house, where we see him walking around in an unhurried manner, but with all his senses alert. He pries out seemingly unimportant details which most others missed. The case is solved in fifteen minutes, becoming an intriguing short film in itself.",image: "j.jpg"},
+			{name: "Madhura Raja",rating: 7.5,review :"The movie will apparently be the highest budget movie in Mammootty's career. Other than prominent actors from Tamil and Telugu industry, R K Suresh, Nedumudi Venu, Vijayaraghavan, Salim Kumar, Aju Varghese, Dharmajan, Biju Kuttan, Siddique, Kailash, Bala, Manikkuttan, Balachandran Chullikkad will play other important roles in the movie.",image: "ra.jpg"},
+			{name: "Dakini",rating: 7,review :"The film follows the life story of a girl named June from 16 years of her age until she turned 26, thereby giving an insight into those ten years of her life.",image: "dak.jpg"},
+			{name: "Kodathi Samaksham Balan Vakeel",rating: 8.2,review :"Balakrishnan is a highly intelligent lawyer who hasn`t been able to achieve much in his professional life due to his stammer. His life takes an interesting turn when his crooked brother-in-law, a police inspector by profession, entrusts him with a complex case involving a rich businessman.",image: "kr.jpg"},
+			{name: "Odiyan",rating: 8.5,review :"Odiyan is the story of a man who instills fear in a community with his shape-shifting abilities and eventually falls prey to the artform. Mohanlal plays Odiyan Manikyan, a member of the Odiyan clan, which -- according to Malayalam folklore -- has the ability to shape-shift into animals. The Odiyan clan functions when the night is at its darkest and scares people.",image: "odiyan.jpg"}]));
+		
+		var movieObjectListArray = JSON.parse(localStorage.getItem("movieObjectList"));
+		// alert(movieObjectListArray[0]["name"]);
+
+		
+		var divContent = "";
+		// alert(movieObjectListArray.length);
+		
+		for(var i = 0 ; i< movieObjectListArray.length; i++){
+			divContent = divContent + '<div class="moviecard"  onclick="review(' + i + ')" id="moviecard' + i + '"><div id="imageDiv"><img src="' + movieObjectListArray[i]["image"] + '"></div><div><h3>' + movieObjectListArray[i]["name"] + '</h3></div><div><h5>' + movieObjectListArray[i]["rating"] + '/10</h5></div></div>';
+		}
+		
+		document.getElementById('listdiv').innerHTML = divContent;
+		
+		function review(i){
+			var movieName = movieObjectListArray[i]["name"];
+			var review = movieObjectListArray[i]["review"];
+			window.location.href = "review.html?movieName="+movieName+"&review="+review+"&username="+username;
+		}
+
+
+	</script>
+</body>
+</html>

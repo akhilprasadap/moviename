@@ -1,0 +1,12 @@
+.moviecard {
+	width: 200px;
+	height: 350px;
+	margin: 60px;
+	background-color: #33F6FF;
+	float: left;
+	background-image: url("film.jpg");
+
+}
+body {
+	background-image: url("tv.jpg");
+}

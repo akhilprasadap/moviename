@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		body  {
+			background-image: url("tc.jpg");
+			margin-top: 200px;
+			margin-bottom: 100px;
+			margin-right: 120px;
+			margin-left: 150px;
+	    }
+		div {
+			margin-top: 200px;
+			margin-bottom: 100px;
+			margin-right: 120px;
+			margin-left: 150px;
+	     }
+	</style>
+	<script type="text/javascript">
+		function login()
+		{
+			var email = document.getElementById('akhilprasad49@gmail.com').value;
+			var password = document.getElementById('password').value;
+			// alert(password);
+			// alert(username);
+			if (email == "akhilprasad49@gmail.com")
+			{
+				if(password == "password")
+		    	{
+					// alert("ghg");
+					window.open("h.html?username="+email);
+            	}
+            	else
+            	{
+            		alert("Ooops!!!!...Password is incorrect");
+            	}
+        	}
+        	else
+        	{
+        		alert("Ooops!!!!...Email is invalid");
+        	}
+			}
+	</script>
+<title></title>
+</head>
+<body>
+	<div style="text-align: center">
+		<caption><h1>LOGIN</h1></caption><br>
+		<label></label>
+		<form action="/action_page.php">
+  		<input type="email" name="username" id="akhilprasad49@gmail.com" placeholder="Enter your Email...">
+  		<br><br><label></label><input type="password" id="password" placeholder="Enter your Password..." minlength="6"><br><br><br>
+		<button onclick="login()" style="font-size: 10pt;color:white;background-color: green">Submit</button>
+		<button type="reset" value="Reset" style="font-size: 10pt;color: white;background-color: green">Reset</button><br></form>
+	</div>
+</body>
+</html>
