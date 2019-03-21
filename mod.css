@@ -1,13 +1,13 @@
 body  {
-			background-image: url("tc.jpg");
-			margin-top: 200px;
-			margin-bottom: 100px;
-			margin-right: 120px;
-			margin-left: 150px;
-	    }
-		div {
-			margin-top: 200px;
-			margin-bottom: 100px;
-			margin-right: 120px;
-			margin-left: 150px;
-	     }
+	background-image: url("tc.jpg");
+	margin-top: 200px;
+	margin-bottom: 100px;
+	margin-right: 120px;
+	margin-left: 150px;
+}
+div {
+	margin-top: 200px;
+	margin-bottom: 100px;
+	margin-right: 120px;
+	margin-left: 150px;
+}
